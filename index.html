@@ -11,17 +11,20 @@
   " x-bind:class="{
     'dark': darkMode === 'dark'
   }">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/scss/style.scss" />
-    <title>Document</title>
-  </head>
-  <body class="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/scss/style.scss" />
+  <title>Document</title>
+</head>
+
+<body class="light">
   <!--  Header  -->
   <header>
     <nav>
@@ -40,7 +43,8 @@
               <ul class="navbar__menu">
                 <li class="navbar__menu-item">
                   <a class="navbar__menu-item-text" href="#">Lastest</a>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="navbar__menu-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                    class="navbar__menu-item-icon">
                     <path fill-rule="evenodd"
                       d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
                       clip-rule="evenodd" />
@@ -48,8 +52,8 @@
                   <div class="navbar__dropdown">
                     <div class="navbar__dropdown-wrapper">
                       <div class="navbar__dropdown-grid">
-                        <div class="col-span-2">
-                          <div class="navbar__dropdown-menu">
+                        <div class="col-span-2 flex items-center justify-center">
+                          <div class="navbar__dropdown-menu ">
                             <ul>
                               <li class="navbar__dropdown-menu-item-active">
                                 <a href="#">News</a>
@@ -70,56 +74,64 @@
                           </div>
                         </div>
                         <div class="col-span-10">
-                          <div class="grid grid-cols-4 gap-4">
+                          <div class="grid grid-cols-4 gap-4 max-h-[218px]">
                             <div>
-                              <article class="flex flex-col gap-1">
-                                <div class="aspect-video">
+                              <article class="flex flex-col gap-2">
+                                <div class="aspect-video max-h-[134px] overflow-hidden object-cover">
                                   <a href="/post.html">
-                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt="" />
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg"
+                                      alt="" class="w-full h-full object-cover" />
                                   </a>
                                 </div>
-                                <div class="flex items-center justify-between">
-                                  <div class="flex items-center justify-start gap-2">
-                                    <div>
-                                      <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                <div class=" flex flex-col gap-1">
+                                  <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-start gap-1">
+                                      <div>
+                                        <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                      </div>
+                                      <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                      <div>
+                                        <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      </div>
                                     </div>
-                                    <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
                                     <div>
-                                      <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                      </svg>
                                     </div>
                                   </div>
                                   <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                      stroke="currentColor" class="size-4">
-                                      <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
-                                    </svg>
+                                    <a class="text-gray-900 font-semibold h6" href="/post.html">Business Agility
+                                      the
+                                      Digital Age:
+                                      Leveraging AI and Automation</a>
                                   </div>
                                 </div>
-                                <div>
-                                  <a class="text-gray-900 text-sm font-medium" href="/post.html">Business Agility the Digital Age:
-                                    Leveraging AI and Automation</a>
+                              </article>
+                            </div>
+                            <div>
+                              <article>
+                                <div class="aspect-video">
+                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg"
+                                    alt="" />
                                 </div>
                               </article>
                             </div>
                             <div>
                               <article>
                                 <div class="aspect-video">
-                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt="" />
+                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg"
+                                    alt="" />
                                 </div>
                               </article>
                             </div>
                             <div>
                               <article>
                                 <div class="aspect-video">
-                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt="" />
-                                </div>
-                              </article>
-                            </div>
-                            <div>
-                              <article>
-                                <div class="aspect-video">
-                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt="" />
+                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg"
+                                    alt="" />
                                 </div>
                               </article>
                             </div>
@@ -154,16 +166,16 @@
 
             <div class="navbar__top-right">
               <div class="navbar__search-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                  class="size-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-6">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
               </div>
 
               <div class="navbar__dark-mode">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                  class="size-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-6">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
                 </svg>
@@ -223,5 +235,6 @@
   <footer>
     <h1>Footer</h1>
   </footer>
-  </body>
+</body>
+
 </html>

@@ -9,8 +9,11 @@ html {
 .btn-primary {
   @apply rounded-radius border-primary bg-primary border px-[16px] font-semibold text-white hover:bg-[#af0d27];
 }
+
 .active {
-
-
   color: white !important;
+}
+
+.h6 {
+  @apply text-base leading-[1.2] tracking-[-0.001rem];
 }
