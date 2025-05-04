@@ -1,12 +1,227 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" x-data="{
+    darkMode: localStorage.getItem('darkMode') || 'light',
+  }" x-init="
+    $watch('darkMode', val => localStorage.setItem('darkMode', val));
+    if (darkMode === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  " x-bind:class="{
+    'dark': darkMode === 'dark'
+  }">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet" />
     <link rel="stylesheet" href="./assets/scss/style.scss" />
     <title>Document</title>
   </head>
-  <body>
-    <h1 class="text-xl text-red-500">Welcome to the Home Page</h1>
+  <body class="light">
+  <!--  Header  -->
+  <header>
+    <nav>
+      <div class="navbar__top relative">
+        <div class="container flex max-w-xl items-center">
+          <div class="navbar__top-wrapper">
+            <div class="navbar__top-left">
+              <div class="navbar__logo">
+                <a href="#">
+                  <img src="https://html.themewant.com/news5/assets/images/main/common/logo-light.svg" alt="Logo" />
+                </a>
+              </div>
+            </div>
+
+            <div class="navbar__top-center">
+              <ul class="navbar__menu">
+                <li class="navbar__menu-item">
+                  <a class="navbar__menu-item-text" href="#">Lastest</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="navbar__menu-item-icon">
+                    <path fill-rule="evenodd"
+                      d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <div class="navbar__dropdown">
+                    <div class="navbar__dropdown-wrapper">
+                      <div class="navbar__dropdown-grid">
+                        <div class="col-span-2">
+                          <div class="navbar__dropdown-menu">
+                            <ul>
+                              <li class="navbar__dropdown-menu-item-active">
+                                <a href="#">News</a>
+                              </li>
+                              <li class="navbar__dropdown-menu-item">
+                                <a href="#">Gadgets</a>
+                              </li>
+                              <li class="navbar__dropdown-menu-item">
+                                <a href="#">Tech</a>
+                              </li>
+                              <li class="navbar__dropdown-menu-item">
+                                <a href="#">Science</a>
+                              </li>
+                              <li class="navbar__dropdown-menu-item">
+                                <a href="#">AI</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-span-10">
+                          <div class="grid grid-cols-4 gap-4">
+                            <div>
+                              <article class="flex flex-col gap-1">
+                                <div class="aspect-video">
+                                  <a href="/post.html">
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt="" />
+                                  </a>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                  <div class="flex items-center justify-start gap-2">
+                                    <div>
+                                      <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                    </div>
+                                    <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                    <div>
+                                      <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                      stroke="currentColor" class="size-4">
+                                      <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div>
+                                  <a class="text-gray-900 text-sm font-medium" href="/post.html">Business Agility the Digital Age:
+                                    Leveraging AI and Automation</a>
+                                </div>
+                              </article>
+                            </div>
+                            <div>
+                              <article>
+                                <div class="aspect-video">
+                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt="" />
+                                </div>
+                              </article>
+                            </div>
+                            <div>
+                              <article>
+                                <div class="aspect-video">
+                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt="" />
+                                </div>
+                              </article>
+                            </div>
+                            <div>
+                              <article>
+                                <div class="aspect-video">
+                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt="" />
+                                </div>
+                              </article>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="navbar__menu-item">
+                  <a class="navbar__menu-item-text" href="#">Trending</a>
+                </li>
+
+                <li class="navbar__menu-item">
+                  <a class="navbar__menu-item-text" href="#">News</a>
+                </li>
+
+                <li class="navbar__menu-item">
+                  <a class="navbar__menu-item-text" href="#">Tech</a>
+                </li>
+
+                <li class="navbar__menu-item">
+                  <a class="navbar__menu-item-text" href="#">Science</a>
+                </li>
+
+                <li class="navbar__menu-item">
+                  <a class="navbar__menu-item-text" href="#">More</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="navbar__top-right">
+              <div class="navbar__search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+              </div>
+
+              <div class="navbar__dark-mode">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                </svg>
+              </div>
+
+              <button class="navbar__subscribe btn-primary group">
+                <span>Subscribe</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                  <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar__bottom">
+        <div class="container flex max-w-xl items-center">
+          <ul class="navbar__bottom-menu">
+            <li>
+              <a href="#">Tech</a>
+            </li>
+            <li>
+              <a href="#">Gadgets</a>
+            </li>
+            <li>
+              <a href="#">Science</a>
+            </li>
+            <li>
+              <a href="#">Travel</a>
+            </li>
+            <li>
+              <a href="#">Business</a>
+            </li>
+            <li>
+              <a href="#">Marketing</a>
+            </li>
+            <li>
+              <a href="#">Startups</a>
+            </li>
+            <li>
+              <a href="#">AI</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--  Main  -->
+  <main>
+    <h1>Main</h1>
+  </main>
+
+  <!--  Footer  -->
+  <footer>
+    <h1>Footer</h1>
+  </footer>
   </body>
 </html>

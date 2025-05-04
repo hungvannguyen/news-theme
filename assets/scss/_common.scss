@@ -1,3 +1,16 @@
 html {
   scroll-behavior: smooth;
 }
+
+.icon1 {
+  @apply size-5 h-5 w-5;
+}
+
+.btn-primary {
+  @apply rounded-radius border-primary bg-primary border px-[16px] font-semibold text-white hover:bg-[#af0d27];
+}
+.active {
+
+
+  color: white !important;
+}

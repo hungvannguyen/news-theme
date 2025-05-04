@@ -1,25 +1,41 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 export default {
-  content: ["./views/**/*.html", './index.html',],
+  content: ["./views/**/*.html", "./index.html"],
   theme: {
+    darkMode: "class",
     extend: {
-      colors: {
-        'dark': '#161616',
+      screens: {
+        sm: "459px",
+        md: "768px",
+        lg: "992px",
       },
-      fontSize: {
-        xs: ['0.75rem', '1.25'],
-        sm: ['0.875rem', '1.25'],
-        base: ['1rem', '1.25'],
-        lg: ['1.125rem', '1.25'],
-        xl: ['1.25rem', '1.25'],
-        '2xl': ['1.45rem', '1.25'],
-        '3xl': ['1.875rem', '1.25'],
-        '4xl': ['2.25rem', '1.25'],
-        '5xl': ['3rem', '1.25'],
-        '6xl': ['3.57rem', '1.25'],
-      }
-    }
+      container: {
+        center: true,
+        padding: "1rem",
+        screens: {
+          sm: "540px",
+          md: "720px",
+          lg: "960px",
+        },
+      },
+      colors: {
+        primary: "#ce0f2e",
+        primary_50: "#fae7ea",
+        gray_25: "#f7f7f7",
+        "border-color": "rgba(131, 131, 131, 0.25)",
+        "gray-900": "rgb(18, 18, 18)",
+      },
+      fontFamily: {
+        sans: ["IBM Plex Sans Arabic", "sans-serif"],
+      },
+      maxWidth: {
+        xl: "1280px",
+      },
+      borderRadius: {
+        radius: "8px",
+      },
+      fontSize: {},
+    },
   },
   plugins: [],
-}
-
+};
