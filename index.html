@@ -1,17 +1,5 @@
 <!doctype html>
-<html lang="en" x-data="{
-    darkMode: localStorage.getItem('darkMode') || 'light',
-  }" x-init="
-    $watch('darkMode', val => localStorage.setItem('darkMode', val));
-    if (darkMode === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  " x-bind:class="{
-    'dark': darkMode === 'dark'
-  }">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,10 +9,11 @@
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="./assets/scss/style.scss" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <title>Document</title>
 </head>
 
-<body class="light">
+<body>
   <!--  Header  -->
   <header>
     <nav>
@@ -41,15 +30,20 @@
 
             <div class="navbar__top-center">
               <ul class="navbar__menu">
-                <li class="navbar__menu-item">
+                <li class="navbar__menu-item" x-data="{ open: false }" @mouseenter="open = true" @click="open = !open"
+                  @mouseleave="open = false">
                   <a class="navbar__menu-item-text" href="#">Lastest</a>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                    class="navbar__menu-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="navbar__menu-item-icon"
+                    :class="open ? 'rotate-180' : 'rotate-0'">
                     <path fill-rule="evenodd"
                       d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
                       clip-rule="evenodd" />
                   </svg>
-                  <div class="navbar__dropdown">
+                  <div class="navbar__dropdown" x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                    x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                    x-transition:leave-end="opacity-0 transform -translate-y-2" style="display: none; z-index: 10;">
                     <div class="navbar__dropdown-wrapper">
                       <div class="navbar__dropdown-grid">
                         <div class="col-span-2 flex items-center justify-center">
@@ -112,26 +106,110 @@
                               </article>
                             </div>
                             <div>
-                              <article>
-                                <div class="aspect-video">
-                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg"
-                                    alt="" />
+                              <article class="flex flex-col gap-2">
+                                <div class="aspect-video max-h-[134px] overflow-hidden object-cover">
+                                  <a href="/post.html">
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt=""
+                                      class="w-full h-full object-cover" />
+                                  </a>
+                                </div>
+                                <div class=" flex flex-col gap-1">
+                                  <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-start gap-1">
+                                      <div>
+                                        <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                      </div>
+                                      <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                      <div>
+                                        <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <a class="text-gray-900 font-semibold h6" href="/post.html">Business Agility
+                                      the
+                                      Digital Age:
+                                      Leveraging AI and Automation</a>
+                                  </div>
                                 </div>
                               </article>
                             </div>
                             <div>
-                              <article>
-                                <div class="aspect-video">
-                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg"
-                                    alt="" />
+                              <article class="flex flex-col gap-2">
+                                <div class="aspect-video max-h-[134px] overflow-hidden object-cover">
+                                  <a href="/post.html">
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt=""
+                                      class="w-full h-full object-cover" />
+                                  </a>
+                                </div>
+                                <div class=" flex flex-col gap-1">
+                                  <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-start gap-1">
+                                      <div>
+                                        <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                      </div>
+                                      <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                      <div>
+                                        <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <a class="text-gray-900 font-semibold h6" href="/post.html">Business Agility
+                                      the
+                                      Digital Age:
+                                      Leveraging AI and Automation</a>
+                                  </div>
                                 </div>
                               </article>
                             </div>
                             <div>
-                              <article>
-                                <div class="aspect-video">
-                                  <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg"
-                                    alt="" />
+                              <article class="flex flex-col gap-2">
+                                <div class="aspect-video max-h-[134px] overflow-hidden object-cover">
+                                  <a href="/post.html">
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt=""
+                                      class="w-full h-full object-cover" />
+                                  </a>
+                                </div>
+                                <div class=" flex flex-col gap-1">
+                                  <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-start gap-1">
+                                      <div>
+                                        <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                      </div>
+                                      <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                      <div>
+                                        <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <a class="text-gray-900 font-semibold h6" href="/post.html">Business Agility
+                                      the
+                                      Digital Age:
+                                      Leveraging AI and Automation</a>
+                                  </div>
                                 </div>
                               </article>
                             </div>
@@ -142,8 +220,209 @@
                   </div>
                 </li>
 
-                <li class="navbar__menu-item">
+                <li class="navbar__menu-item" x-data="{ open: false }" @mouseenter="open = true" @click="open = !open"
+                  @mouseleave="open = false">
                   <a class="navbar__menu-item-text" href="#">Trending</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="navbar__menu-item-icon"
+                    :class="open ? 'rotate-180' : 'rotate-0'">
+                    <path fill-rule="evenodd"
+                      d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <div class="navbar__dropdown" x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                    x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                    x-transition:leave-end="opacity-0 transform -translate-y-2" style="display: none; z-index: 10;">
+                    <div class="navbar__dropdown-wrapper">
+                      <div class="navbar__dropdown-grid">
+                        <div class="col-span-12">
+                          <div class="grid grid-cols-5 gap-4 max-h-[218px]">
+                            <div>
+                              <article class="flex flex-col gap-2">
+                                <div class="aspect-video max-h-[134px] overflow-hidden object-cover">
+                                  <a href="/post.html">
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt=""
+                                      class="w-full h-full object-cover" />
+                                  </a>
+                                </div>
+                                <div class=" flex flex-col gap-1">
+                                  <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-start gap-1">
+                                      <div>
+                                        <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                      </div>
+                                      <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                      <div>
+                                        <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <a class="text-gray-900 font-semibold h6" href="/post.html">Business Agility
+                                      the
+                                      Digital Age:
+                                      Leveraging AI and Automation</a>
+                                  </div>
+                                </div>
+                              </article>
+                            </div>
+                            <div>
+                              <article class="flex flex-col gap-2">
+                                <div class="aspect-video max-h-[134px] overflow-hidden object-cover">
+                                  <a href="/post.html">
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt=""
+                                      class="w-full h-full object-cover" />
+                                  </a>
+                                </div>
+                                <div class=" flex flex-col gap-1">
+                                  <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-start gap-1">
+                                      <div>
+                                        <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                      </div>
+                                      <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                      <div>
+                                        <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <a class="text-gray-900 font-semibold h6" href="/post.html">Business Agility
+                                      the
+                                      Digital Age:
+                                      Leveraging AI and Automation</a>
+                                  </div>
+                                </div>
+                              </article>
+                            </div>
+                            <div>
+                              <article class="flex flex-col gap-2">
+                                <div class="aspect-video max-h-[134px] overflow-hidden object-cover">
+                                  <a href="/post.html">
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt=""
+                                      class="w-full h-full object-cover" />
+                                  </a>
+                                </div>
+                                <div class=" flex flex-col gap-1">
+                                  <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-start gap-1">
+                                      <div>
+                                        <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                      </div>
+                                      <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                      <div>
+                                        <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <a class="text-gray-900 font-semibold h6" href="/post.html">Business Agility
+                                      the
+                                      Digital Age:
+                                      Leveraging AI and Automation</a>
+                                  </div>
+                                </div>
+                              </article>
+                            </div>
+                            <div>
+                              <article class="flex flex-col gap-2">
+                                <div class="aspect-video max-h-[134px] overflow-hidden object-cover">
+                                  <a href="/post.html">
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt=""
+                                      class="w-full h-full object-cover" />
+                                  </a>
+                                </div>
+                                <div class=" flex flex-col gap-1">
+                                  <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-start gap-1">
+                                      <div>
+                                        <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                      </div>
+                                      <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                      <div>
+                                        <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <a class="text-gray-900 font-semibold h6" href="/post.html">Business Agility
+                                      the
+                                      Digital Age:
+                                      Leveraging AI and Automation</a>
+                                  </div>
+                                </div>
+                              </article>
+                            </div>
+                            <div>
+                              <article class="flex flex-col gap-2">
+                                <div class="aspect-video max-h-[134px] overflow-hidden object-cover">
+                                  <a href="/post.html">
+                                    <img src="https://html.themewant.com/news5/assets/images/main/posts/img-06.jpg" alt=""
+                                      class="w-full h-full object-cover" />
+                                  </a>
+                                </div>
+                                <div class=" flex flex-col gap-1">
+                                  <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-start gap-1">
+                                      <div>
+                                        <a class="text-xs text-primary font-medium" href="/tag">Tech</a>
+                                      </div>
+                                      <div class="text-gray-900 text-xs font-medium opacity-60">|</div>
+                                      <div>
+                                        <span class="text-gray-900 text-xs font-medium opacity-60">7d ago</span>
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <a class="text-gray-900 font-semibold h6" href="/post.html">Business Agility
+                                      the
+                                      Digital Age:
+                                      Leveraging AI and Automation</a>
+                                  </div>
+                                </div>
+                              </article>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </li>
 
                 <li class="navbar__menu-item">
