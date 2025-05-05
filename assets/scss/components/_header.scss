@@ -1,17 +1,17 @@
 header {
   nav {
-    @apply z-[1] bg-white tracking-normal;
+    @apply z-[1] bg-white dark:bg-gray-900 tracking-normal;
 
     .navbar {
       &__top {
         @apply z-[2];
 
         &-wrapper {
-          @apply flex min-h-[72px] w-full items-center justify-between text-gray-900 lg:min-h-[80px];
+          @apply flex min-h-[72px] w-full items-center justify-between  lg:min-h-[80px];
         }
 
         &-left {
-          @apply flex justify-center;
+          @apply flex justify-center items-center gap-6;
 
           img {
             @apply w-[80px];
@@ -27,7 +27,7 @@ header {
       }
 
       &__bottom {
-        @apply bg-primary z-[1] flex min-h-[32px] items-center lg:min-h-[48px];
+        @apply bg-primary z-[1] flex min-h-[32px] items-center md:min-h-[48px];
 
         &-menu {
           @apply flex flex-nowrap items-center gap-6 overflow-x-auto;
@@ -42,30 +42,34 @@ header {
         }
       }
 
+      &__logo {
+        @apply flex items-center justify-center;
+      }
+
       &__menu {
-        @apply hidden items-center justify-center gap-6 md:flex lg:gap-8;
+        @apply hidden items-center justify-center gap-6 lg:flex lg:gap-8;
 
         &-item {
           @apply border-primary flex items-center gap-[2px] hover:border-b-2;
 
           &-text {
-            @apply text-lg font-semibold text-gray-900;
+            @apply text-lg font-semibold text-gray-900 dark:text-white;
           }
 
           &-icon {
-            @apply h-[12px] w-[12px] font-semibold text-gray-900 transform transition-transform duration-200;
+            @apply h-[12px] w-[12px] font-semibold text-gray-900 transform transition-transform duration-200 dark:text-white ease-in-out;
           }
         }
       }
 
       &__search {
         &-icon {
-          @apply h-[24px] w-[24px] cursor-pointer text-gray-900;
+          @apply h-[24px] w-[24px] cursor-pointer text-gray-900 dark:text-white;
         }
       }
 
       &__subscribe {
-        @apply flex h-[40px] w-[120px] items-center justify-center gap-2 transition-all duration-300;
+        @apply lg:flex h-[40px] w-[120px] items-center justify-center gap-2 transition-all duration-300 hidden;
 
         span {
           @apply translate-x-[10px] text-sm transition-all duration-300;
@@ -89,12 +93,12 @@ header {
       &__dark-mode {
         @apply flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full border border-border-color;
         svg {
-          @apply h-[16px] w-[16px] text-gray-900;
+          @apply h-[16px] w-[16px] text-gray-900 dark:text-white;
         }
       }
 
       &__dropdown {
-        @apply rounded-radius container absolute inset-x-0 top-full flex w-full max-w-xl bg-white;
+        @apply rounded-radius container absolute inset-x-0 top-full flex w-full max-w-xl bg-white dark:bg-gray-800;
 
         box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.2);
 
@@ -109,20 +113,20 @@ header {
         }
 
         &-menu {
-          @apply bg-gray_25 rounded-radius w-full p-2;
+          @apply bg-gray_25 rounded-radius w-full p-2 dark:bg-gray-900;
 
           &-item {
             @apply flex w-full items-center justify-center min-h-[38px];
             
             a {
-              @apply hover:text-primary px-4 py-2 text-[14.4px] text-[rgb(36)] opacity-60 hover:opacity-100 w-full text-center font-semibold;
+              @apply hover:text-primary px-4 py-2 text-[14.4px] text-[rgb(36)] opacity-60 hover:opacity-100 w-full text-center font-semibold dark:text-white;
             }
 
             &-active {
               @apply bg-primary rounded-[4px] flex items-center justify-center min-h-[38px];
 
               a {
-                @apply px-4 py-2 text-[14.4px] font-semibold text-white w-full text-center;
+                @apply px-4 py-2 text-[14.4px] font-semibold text-white w-full text-center dark:text-white;
               }
             }
           }

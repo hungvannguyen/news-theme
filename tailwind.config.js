@@ -1,8 +1,8 @@
 /** @type {import("tailwindcss").Config} */
 export default {
   content: ["./views/**/*.html", "./index.html"],
+  darkMode: "class",
   theme: {
-    darkMode: "class",
     extend: {
       screens: {
         sm: "459px",
@@ -24,6 +24,7 @@ export default {
         gray_25: "#f7f7f7",
         "border-color": "rgba(131, 131, 131, 0.25)",
         "gray-900": "rgb(18, 18, 18)",
+        "gray-800": "#242424",
       },
       fontFamily: {
         sans: ["IBM Plex Sans Arabic", "sans-serif"],
