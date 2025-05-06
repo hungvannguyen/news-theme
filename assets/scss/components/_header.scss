@@ -11,7 +11,7 @@ header {
         }
 
         &-left {
-          @apply flex justify-center items-center gap-6;
+          @apply w-full flex md:justify-center md:items-center gap-6 md:w-auto;
 
           img {
             @apply w-[80px];
@@ -43,11 +43,19 @@ header {
       }
 
       &__logo {
-        @apply flex items-center justify-center;
+        @apply flex items-center justify-center mx-auto;
       }
 
       &__menu {
         @apply hidden items-center justify-center gap-6 lg:flex lg:gap-8;
+
+        &-btn {
+          @apply flex;
+
+          svg {
+            @apply dark:text-white ;
+          }
+        }
 
         &-item {
           @apply border-primary flex items-center gap-[2px] hover:border-b-2;
@@ -117,7 +125,7 @@ header {
 
           &-item {
             @apply flex w-full items-center justify-center min-h-[38px];
-            
+
             a {
               @apply hover:text-primary px-4 py-2 text-[14.4px] text-[rgb(36)] opacity-60 hover:opacity-100 w-full text-center font-semibold dark:text-white;
             }
@@ -129,6 +137,56 @@ header {
                 @apply px-4 py-2 text-[14.4px] font-semibold text-white w-full text-center dark:text-white;
               }
             }
+          }
+        }
+      }
+    }
+  }
+
+  .navbar {
+    &__mobile {
+      @apply absolute h-screen bg-white top-0 z-40 dark:bg-gray-900  md:hidden;
+
+      &-header {
+        @apply flex justify-between items-center;
+      }
+
+      &-close {
+        @apply flex w-[40px] items-center justify-center text-gray-900 dark:text-white dark:opacity-50;
+      }
+
+      &-wrapper {
+        @apply p-[30px] w-[300px] flex flex-col gap-8;
+      }
+
+      &-menu {
+        @apply flex flex-col gap-1;
+
+        &-item {
+          @apply flex flex-col;
+
+          &-text {
+            @apply flex justify-between items-center;
+          }
+
+          a {
+            @apply py-[5px] text-base font-semibold text-gray-900 dark:text-white;
+          }
+
+          svg {
+            @apply size-3 dark:text-white dark:opacity-50;
+          }
+        }
+      }
+
+      &-submenu {
+        @apply py-2 pl-4 flex flex-col gap-2;
+
+        li {
+          @apply w-full;
+
+          a {
+            @apply py-[5px] text-[rgb(36)] opacity-60;
           }
         }
       }

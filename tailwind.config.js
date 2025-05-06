@@ -25,6 +25,7 @@ export default {
         "border-color": "rgba(131, 131, 131, 0.25)",
         "gray-900": "rgb(18, 18, 18)",
         "gray-800": "#242424",
+        "gray-rgb": "rgb(91, 91, 91)",
       },
       fontFamily: {
         sans: ["IBM Plex Sans Arabic", "sans-serif"],

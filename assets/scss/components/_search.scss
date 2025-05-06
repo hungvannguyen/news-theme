@@ -4,7 +4,7 @@
   min-height: auto;
 
   &__close {
-    @apply absolute right-0 top-2 flex w-[40px] items-center justify-center rounded-l-radius text-gray-900;
+    @apply absolute right-0 top-2 flex w-[40px] items-center justify-center  text-gray-900;
 
     svg {
       @apply transition-transform duration-300 ease-in-out hover:rotate-90 hover:text-primary dark:text-white dark:opacity-50 dark:hover:text-primary;
@@ -24,7 +24,7 @@
   }
 
   &__icon {
-    @apply flex cursor-pointer items-center justify-center text-white opacity-50;
+    @apply flex cursor-pointer items-center justify-center text-[#212529] opacity-50;
 
     svg {
       @apply h-[40px] w-[40px] lg:h-[24px] lg:w-[24px];
