@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "bootstrap-icons": "^1.13.1",
     "postcss-import": "^16.1.0"
   }
 }
