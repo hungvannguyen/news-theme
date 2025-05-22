@@ -91,10 +91,10 @@ p {
   font-family: var(--font-figtree), serif;
 }
 
-.container__xxl {
+.container--xxl {
   @apply lg:max-w-[1320px];
 }
 
-.container__xxl {
+.container--xxl {
   @apply w-full mx-auto px-3;
 }

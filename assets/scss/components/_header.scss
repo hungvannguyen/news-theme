@@ -3,6 +3,24 @@
 
   &__wrapper {
     @apply flex items-center justify-between;
+
+    .nav {
+      &--right {
+        @apply flex items-center gap-[30px];
+      }
+
+      &__icons {
+        @apply flex items-center gap-[20px];
+
+        li {
+          @apply size-[30px] flex items-center justify-center border-[1px] border-[var(--border-color)] rounded-[50%] cursor-pointer transition duration-[350ms];
+
+          svg {
+            @apply text-base text-[var(--text-color)] transition duration-[350ms];
+          }
+        }
+      }
+    }
   }
 
   .logo {
