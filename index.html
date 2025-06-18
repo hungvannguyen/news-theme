@@ -1,134 +1,339 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./assets/scss/style.scss" />
-    <title>Document</title>
-  </head>
-  <body>
-  <header class="header">
-    <div class="container--xxl">
-      <div class="header__wrapper">
-        <div class="logo__sidebar">
-          <div class="sidebar menu__icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M1.66663 9.16669H18.3333V10.8334H1.66663V9.16669ZM1.66663 4.16669H18.3333V5.83335H1.66663V4.16669ZM1.66663 14.1667H18.3333V15.8334H1.66663V14.1667Z"></path>
-            </svg>
-          </div>
-
-          <div class="header__logo">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="./assets/scss/style.scss"/>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Home</title>
+</head>
+<body>
+<div class="sidebar__menu">
+    <div class="mobile__logo">
+        <div class="header__logo">
             <a href="/">
-              <img alt="logo" src="https://demo-egenslab.b-cdn.net/html/zorik/preview/assets/image/index-img/icon/dark-logo.svg"
-                class="header__logo--dark" />
+                <img alt="logo" src="https://demo-egenslab.b-cdn.net/html/zorik/preview/assets/image/index-img/icon/dark-logo.svg"
+                    class="header__logo--dark"/>
             </a>
 
             <a href="/">
-              <img alt="logo" src="https://demo-egenslab.b-cdn.net/html/zorik/preview/assets/image/index-img/icon/light-logo.svg"
-                class="header__logo--light" />
+                <img alt="logo" src="https://demo-egenslab.b-cdn.net/html/zorik/preview/assets/image/index-img/icon/light-logo.svg"
+                    class="header__logo--light"/>
             </a>
-          </div>
-
-          <div class="main__menu">
-            <ul class="menu__list">
-              <li class="menu__item">
-                <a href="#" class="menu__link">Demo
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="menu__icon" viewBox="0 0 16 16">
-                    <path
-                      d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                  </svg>
-                </a>
-
-                <ul class="sub__menu">
-                  <li>
-                    <a href="#" class="sub__menu--link">Life Style</a>
-                  </li>
-                  <li>
-                    <a href="#" class="sub__menu--link">Travel</a>
-                  </li>
-                  <li>
-                    <a href="#" class="sub__menu--link">Pet Care</a>
-                  </li>
-                  <li>
-                    <a href="#" class="sub__menu--link">Heal & Wellness</a>
-                  </li>
-                  <li>
-                    <a href="#" class="sub__menu--link">Ai technology</a>
-                  </li>
-                  <li>
-                    <a href="#" class="sub__menu--link">Podcast</a>
-                  </li>
-                  <li>
-                    <a href="#" class="sub__menu--link">Minimal</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="menu__item">
-                <a href="#" class="menu__link">Ai Basic
-                </a>
-              </li>
-
-              <li class="menu__item">
-                <a href="#" class="menu__link">Ai Trend
-                </a>
-              </li>
-
-              <li class="menu__item">
-                <a href="#" class="menu__link">Innovation
-                </a>
-              </li>
-
-              <li class="menu__item">
-                <a href="#" class="menu__link">Advice
-                </a>
-              </li>
-
-              <li class="menu__item">
-                <a href="#" class="menu__link">Feature
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="menu__icon" viewBox="0 0 16 16">
-                    <path
-                      d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                  </svg>
-                </a>
-
-                <ul class="sub__menu">
-                  <li>
-                    <a href="#" class="sub__menu--link">About us</a>
-                  </li>
-                  <li>
-                    <a href="#" class="sub__menu--link">FAQ's</a>
-                  </li>
-                  <li>
-                    <a href="#" class="sub__menu--link">Term & Condition</a>
-                  </li>
-                  <li>
-                    <a href="#" class="sub__menu--link">Privacy Policy</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="menu__item">
-                <a href="#" class="menu__link">Contact
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div class="nav--right">
-          <ul class="nav__icons">
-            <li class="theme--switcher">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                  d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707m-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707m7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707M3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707" />
-              </svg>
-            </li>
-          </ul>
+        <div class="mobile__close">
+            <i class="bi bi-x"></i>
         </div>
-      </div>
     </div>
-  </header>
-  </body>
+
+    <ul class="menu__list">
+        <li class="menu__item" data-behavior="dropdown">
+            <a href="#" class="menu__link">Demo</a>
+            <i class="bi bi-plus dropdown-icon"></i>
+            <div class="sub__menu">
+                <ul class="pt-[5px] pl-[10px] pb-[20px]">
+                    <li>
+                        <a href="#" class="sub__menu--link">Life Style</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Travel</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Pet Care</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Heal & Wellness</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Ai technology</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Podcast</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Minimal</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu__item"><a class="menu__link" href="#">Ai Trend</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Ai Basic</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Innovation</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Advice</a></li>
+        <li class="menu__item" data-behavior="dropdown">
+            <a class="menu__link" href="#">Post Features</a>
+            <i class="bi bi-plus dropdown-icon"></i>
+            <div class="sub__menu">
+                <ul class="pt-[5px] pl-[10px] pb-[20px]">
+                    <li>
+                        <a href="#" class="sub__menu--link">Life Style</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Travel</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Pet Care</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Heal & Wellness</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Ai technology</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Podcast</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub__menu--link">Minimal</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+    </ul>
+
+    <div class="menu__bottom">
+        <div class="subscribe__area">
+            <h4>Subscribe Zorik To Get Free Update.</h4>
+            <p>By subscribing, you'll get latest & Featured blog post by email.</p>
+            <a href="#" class="btn__subscribe">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 10L10 1M10 1C8 1.375 3.625 2.125 1 1M10 1C9.625 2.875 8.875 7 10 10" stroke-width="1.5"
+                        stroke-linecap="round"></path>
+                </svg>
+                SUBSCRIBE
+
+            </a>
+        </div>
+
+        <div class="social__wrap">
+            <h6>Follow Social Media</h6>
+
+            <ul class="social__area">
+                <li>
+                    <a href="#">
+                        <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.81526 12.2483V7.46726H9.42818L9.66793 5.59534H7.81526V4.40301C7.81526 3.86284 7.96576 3.49301 8.74101 3.49301H9.72334V1.82409C9.24538 1.77287 8.76495 1.74814 8.28426 1.75001C6.85859 1.75001 5.87976 2.62034 5.87976 4.21809V5.59184H4.27734V7.46376H5.88326V12.2483H7.81526Z"></path>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <svg width="12" height="12" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <path
+                                    d="M11.025 0.65625H13.1722L8.48225 6.0305L14 13.3438H9.68012L6.2965 8.9075L2.42462 13.3438H0.2765L5.29287 7.595L0 0.65625H4.43013L7.48825 4.71012L11.025 0.65625ZM10.2725 12.0557H11.4625L3.78262 1.87687H2.50688L10.2725 12.0557Z"></path>
+                            </g>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.90719 4.1972C3.61209 4.1972 4.18353 3.62576 4.18353 2.92086C4.18353 2.21597 3.61209 1.64453 2.90719 1.64453C2.20229 1.64453 1.63086 2.21597 1.63086 2.92086C1.63086 3.62576 2.20229 4.1972 2.90719 4.1972Z"></path>
+                            <path
+                                d="M5.38752 5.16523V12.2463H7.5861V8.74457C7.5861 7.82057 7.75994 6.92573 8.9056 6.92573C10.0355 6.92573 10.0495 7.98215 10.0495 8.8029V12.2469H12.2493V8.36365C12.2493 6.45615 11.8386 4.99023 9.60911 4.99023C8.53869 4.99023 7.82119 5.57765 7.52777 6.13357H7.49802V5.16523H5.38752ZM1.80469 5.16523H4.00677V12.2463H1.80469V5.16523Z"></path>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.2191 4.84492C12.2132 4.40312 12.1305 3.96571 11.9747 3.55226C11.8396 3.20351 11.6332 2.88679 11.3687 2.62233C11.1043 2.35786 10.7875 2.15147 10.4388 2.01634C10.0307 1.86313 9.59948 1.78029 9.16362 1.77134C8.60246 1.74626 8.42454 1.73926 7.00004 1.73926C5.57554 1.73926 5.39296 1.73926 4.83587 1.77134C4.40022 1.78036 3.96924 1.8632 3.56129 2.01634C3.21249 2.15138 2.89572 2.35773 2.63124 2.62221C2.36677 2.88669 2.16041 3.20346 2.02537 3.55226C1.87186 3.96008 1.7892 4.39116 1.78096 4.82684C1.75587 5.38859 1.74829 5.56651 1.74829 6.99101C1.74829 8.41551 1.74829 8.59751 1.78096 9.15517C1.78971 9.59151 1.87196 10.022 2.02537 10.4309C2.16064 10.7796 2.36715 11.0963 2.63171 11.3606C2.89628 11.625 3.21308 11.8313 3.56187 11.9663C3.96871 12.1256 4.39976 12.2144 4.83646 12.2288C5.39821 12.2538 5.57612 12.2614 7.00062 12.2614C8.42512 12.2614 8.60771 12.2614 9.16479 12.2288C9.60063 12.2202 10.0318 12.1375 10.44 11.9843C10.7886 11.8491 11.1053 11.6426 11.3697 11.3782C11.6341 11.1137 11.8406 10.7971 11.9759 10.4484C12.1293 10.0401 12.2115 9.60959 12.2203 9.17267C12.2454 8.61151 12.253 8.43359 12.253 7.00851C12.2518 5.58401 12.2518 5.40317 12.2191 4.84492ZM6.99654 9.68484C5.50671 9.68484 4.29979 8.47792 4.29979 6.98809C4.29979 5.49826 5.50671 4.29134 6.99654 4.29134C7.71176 4.29134 8.39769 4.57546 8.90343 5.0812C9.40917 5.58694 9.69329 6.27287 9.69329 6.98809C9.69329 7.70331 9.40917 8.38924 8.90343 8.89498C8.39769 9.40072 7.71176 9.68484 6.99654 9.68484ZM9.80062 4.82042C9.71802 4.8205 9.63622 4.80429 9.55989 4.77271C9.48356 4.74114 9.41421 4.69482 9.3558 4.63641C9.29739 4.57801 9.25108 4.50865 9.2195 4.43233C9.18793 4.356 9.17171 4.27419 9.17179 4.19159C9.17179 4.10905 9.18805 4.02732 9.21964 3.95106C9.25122 3.8748 9.29752 3.80551 9.35589 3.74714C9.41425 3.68878 9.48354 3.64248 9.5598 3.61089C9.63606 3.57931 9.71779 3.56305 9.80033 3.56305C9.88287 3.56305 9.96461 3.57931 10.0409 3.61089C10.1171 3.64248 10.1864 3.68878 10.2448 3.74714C10.3031 3.80551 10.3494 3.8748 10.381 3.95106C10.4126 4.02732 10.4289 4.10905 10.4289 4.19159C10.4289 4.53926 10.1477 4.82042 9.80062 4.82042Z"></path>
+                            <path
+                                d="M6.99589 8.73983C7.96336 8.73983 8.74764 7.95554 8.74764 6.98808C8.74764 6.02061 7.96336 5.23633 6.99589 5.23633C6.02843 5.23633 5.24414 6.02061 5.24414 6.98808C5.24414 7.95554 6.02843 8.73983 6.99589 8.73983Z"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<header class="header">
+    <div class="container--xxl">
+        <div class="header__wrapper">
+            <div class="logo__sidebar">
+                <div class="sidebar menu__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M1.66663 9.16669H18.3333V10.8334H1.66663V9.16669ZM1.66663 4.16669H18.3333V5.83335H1.66663V4.16669ZM1.66663 14.1667H18.3333V15.8334H1.66663V14.1667Z"></path>
+                    </svg>
+                </div>
+
+                <div class="header__logo">
+                    <a href="/">
+                        <img alt="logo" src="https://demo-egenslab.b-cdn.net/html/zorik/preview/assets/image/index-img/icon/dark-logo.svg"
+                            class="header__logo--dark"/>
+                    </a>
+
+                    <a href="/">
+                        <img alt="logo" src="https://demo-egenslab.b-cdn.net/html/zorik/preview/assets/image/index-img/icon/light-logo.svg"
+                            class="header__logo--light"/>
+                    </a>
+                </div>
+
+                <div class="main__menu">
+                    <ul class="menu__list">
+                        <li class="menu__item" data-behavior="dropdown">
+                            <a href="#" class="menu__link">Demo
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="menu__icon" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                </svg>
+                                <i class="bi bi-caret-down-fill"></i>
+                            </a>
+
+                            <ul class="sub__menu">
+                                <li>
+                                    <a href="#" class="sub__menu--link">Life Style</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sub__menu--link">Travel</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sub__menu--link">Pet Care</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sub__menu--link">Heal & Wellness</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sub__menu--link">Ai technology</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sub__menu--link">Podcast</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sub__menu--link">Minimal</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Ai Basic
+                            </a>
+                        </li>
+
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Ai Trend
+                            </a>
+                        </li>
+
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Innovation
+                            </a>
+                        </li>
+
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Advice
+                            </a>
+                        </li>
+
+                        <li class="menu__item" data-behavior="dropdown">
+                            <a href="#" class="menu__link">Feature
+                                <i class="bi bi-caret-down-fill"></i>
+                            </a>
+
+                            <ul class="sub__menu">
+                                <li>
+                                    <a href="#" class="sub__menu--link">About us</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sub__menu--link">FAQ's</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sub__menu--link">Term & Condition</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sub__menu--link">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="nav__right">
+                <ul class="nav__icons">
+                    <li class="theme__switcher">
+                        <i class="bi bi-brightness-low-fill icon-light"></i>
+                        <i class="bi bi-moon icon-dark hidden"></i>
+                    </li>
+
+                    <li class="search__bar" data-behavior="search">
+                        <div class="search__btn">
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M7.67434 2.9595C5.06901 2.9595 2.95901 5.06883 2.95901 7.66883C2.95901 10.2688 5.06901 12.3775 7.67434 12.3775C8.97434 12.3775 10.1497 11.8535 11.003 11.0042C11.4432 10.5675 11.7924 10.0479 12.0304 9.47539C12.2684 8.90288 12.3905 8.28885 12.3897 7.66883C12.3897 5.06883 10.2797 2.9595 7.67434 2.9595ZM1.33301 7.66883C1.33301 4.16883 4.17301 1.3335 7.67434 1.3335C11.1757 1.3335 14.0157 4.16883 14.0157 7.66883C14.0175 9.072 13.5514 10.4357 12.691 11.5442L14.4277 13.2788C14.5081 13.3531 14.5728 13.4429 14.6177 13.5427C14.6627 13.6426 14.687 13.7505 14.6892 13.86C14.6914 13.9695 14.6715 14.0783 14.6306 14.1799C14.5898 14.2815 14.5289 14.3738 14.4515 14.4513C14.3741 14.5287 14.2818 14.5898 14.1803 14.6308C14.0787 14.6717 13.9699 14.6918 13.8605 14.6897C13.751 14.6876 13.643 14.6634 13.5431 14.6186C13.4432 14.5737 13.3534 14.5092 13.279 14.4288L11.539 12.6915C10.4313 13.5441 9.0722 14.0055 7.67434 14.0035C4.17301 14.0035 1.33301 11.1682 1.33301 7.66883Z"></path>
+                            </svg>
+                        </div>
+
+                        <div class="search__input">
+                            <div class="search__close"></div>
+
+                            <form>
+                                <div class="search__group">
+                                    <div class="form__inner--2">
+                                        <input type="text" placeholder="Enter your keywords"/>
+
+                                        <button type="submit">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M7.67458 2.95934C5.06925 2.95934 2.95925 5.06868 2.95925 7.66868C2.95925 10.2687 5.06925 12.3773 7.67458 12.3773C8.97459 12.3773 10.1499 11.8533 11.0033 11.004C11.4434 10.5674 11.7926 10.0477 12.0307 9.47524C12.2687 8.90273 12.3908 8.28869 12.3899 7.66868C12.3899 5.06868 10.2799 2.95934 7.67458 2.95934ZM1.33325 7.66868C1.33325 4.16868 4.17325 1.33334 7.67458 1.33334C11.1759 1.33334 14.0159 4.16868 14.0159 7.66868C14.0178 9.07185 13.5516 10.4356 12.6913 11.544L14.4279 13.2787C14.5084 13.353 14.573 13.4427 14.618 13.5426C14.6629 13.6424 14.6872 13.7503 14.6894 13.8598C14.6916 13.9693 14.6717 14.0781 14.6309 14.1797C14.59 14.2813 14.5291 14.3736 14.4517 14.4511C14.3743 14.5286 14.2821 14.5896 14.1805 14.6306C14.079 14.6716 13.9702 14.6916 13.8607 14.6895C13.7512 14.6874 13.6433 14.6632 13.5434 14.6184C13.4435 14.5736 13.3536 14.5091 13.2793 14.4287L11.5393 12.6913C10.4316 13.544 9.07244 14.0054 7.67458 14.0033C4.17325 14.0033 1.33325 11.168 1.33325 7.66868Z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="search__quick">
+                                    <ul>
+                                        <li>
+                                            Quick Search:
+                                        </li>
+                                        <li>
+                                            <a href="#">Ai Basic,</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Ai Trend,</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Innovation,</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Advice</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#" class="btn__subscribe">
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 10L10 1M10 1C8 1.375 3.625 2.125 1 1M10 1C9.625 2.875 8.875 7 10 10" stroke-width="1.5"
+                            stroke-linecap="round"></path>
+                    </svg>
+                    SUBSCRIBE
+
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script src="./assets/js/main.js"></script>
+</body>
 </html>
