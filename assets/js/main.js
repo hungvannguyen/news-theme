@@ -70,6 +70,36 @@
             html.classList.remove("dark");
         }
         updateIcons();
+
+        //     Open and close sidebar
+
+        const toggleBtn = document.getElementById("sidebar-toggle");
+        const sidebar = document.getElementById("sidebar");
+        const closeBtn = document.querySelector(".mobile__close");
+
+        function openSidebar() {
+            sidebar.classList.remove("-translate-x-full");
+            sidebar.classList.add("translate-x-0");
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add("-translate-x-full");
+            sidebar.classList.remove("translate-x-0");
+        }
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                openSidebar();
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                closeSidebar();
+            });
+        }
     });
 
     function setupDropdownBehavior() {
@@ -90,6 +120,7 @@
             if (useClick) {
                 [trigger, icon].forEach((el) => {
                     if (!el) return;
+
                     el.addEventListener("click", (e) => {
                         e.preventDefault();
                         subMenu.classList.toggle("active");

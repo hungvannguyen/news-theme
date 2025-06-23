@@ -94,12 +94,14 @@ p {
   font-family: var(--font-figtree), serif;
 }
 
-.container--xxl {
-  @apply lg:max-w-[1320px];
-}
+.container {
+    &--xl {
+        @apply max-w-[1140px] xxl:max-w-[1320px] mx-auto px-3 w-full;
+    }
 
-.container--xxl {
-  @apply w-full mx-auto px-3;
+    &--xxl {
+        @apply lg:max-w-[1320px] w-full mx-auto px-3;
+    }
 }
 
 .form__inner {
@@ -138,7 +140,7 @@ p {
       @apply text-[var(--dark-text-color)];
 
       &:after {
-        @apply origin-left scale-x-100 ;
+          @apply origin-left scale-x-100;
       }
 
       svg {
@@ -146,4 +148,94 @@ p {
       }
     }
   }
+
+    &__load-more {
+        @apply w-full flex justify-center px-[12px];
+
+        a {
+            @apply text-[15px] font-bold text-[var(--text-color)] bg-[#F8F8F8] md:flex items-center justify-center rounded-[100px] gap-[8px] py-[20px] px-[36px] relative overflow-hidden z-[1] transition-all duration-500 ease-linear delay-0 dark:bg-[#2F2F2F];
+            font-family: var(--font-red-rose), serif;
+
+            svg {
+                @apply fill-none stroke-[var(--text-color)] transition-all duration-500;
+            }
+
+            &:after {
+                @apply content-[''] absolute z-[-1] w-full h-full top-0 right-0 origin-right scale-x-0 transition-transform duration-[700ms] ease-in-out delay-0 bg-[var(--text-color)] rounded-[40px];
+            }
+
+            &:hover {
+                @apply text-[var(--white-color)] dark:text-[var(--dark-text-color)];
+
+                &:after {
+                    @apply origin-left scale-x-100;
+                }
+
+                svg {
+                    @apply fill-none stroke-[var(--white-color)] dark:stroke-[var(--dark-text-color)];
+                }
+            }
+        }
+    }
 }
+
+.author {
+    @apply py-[20px] flex items-center gap-[15px];
+
+    &__image {
+        a {
+            img {
+                @apply max-w-full h-auto object-cover;
+            }
+        }
+    }
+
+    &__content {
+        @apply leading-8;
+    }
+
+    &__name {
+        a {
+            @apply text-[16px] font-bold leading-[19.98px] text-left text-[var(--dark-text-color)] transition-all duration-[350ms] hover:text-[var(--primary-green)] dark:text-[var(--white-color)] dark:hover:text-[var(--primary-green)];
+            font-family: var(--font-red-rose), serif;
+        }
+    }
+
+    &__publish-date {
+        @apply flex items-center text-center gap-[26px];
+
+        a {
+            @apply text-[14px] font-medium leading-[16.8px] text-left text-[va(--dark-text-color2)] transition-all duration-[350ms] dark:text-[var(--white-color)] dark:hover:text-[var(--primary-green)];
+            font-family: var(--font-figtree), serif;
+        }
+
+        span {
+            @apply text-[14px] font-medium leading-[16.8px] text-left text-[var(--dark-text-color2)] relative dark:text-[var(--white-color)];
+            font-family: var(--font-figtree), serif;
+
+            &:after {
+                @apply content-[''] size-[6px] rounded-[5px] bg-[#C4C4C4] absolute left-[-16px] top-1/2 transform translate-y-[-50%];
+            }
+        }
+    }
+}
+
+.tags {
+    @apply mb-[12px] flex w-full items-center gap-[30px] text-center;
+}
+
+.tag {
+    a {
+        @apply rounded-[5px] bg-[#F0F0F0] px-[10px] py-[3px] text-left text-[16px] font-normal leading-[30px] text-[var(--dark-text-color2)] transition-all duration-700 hover:bg-[var(--primary-green)] dark:bg-transparent dark:text-[var(--white-color)] dark:border-[1px] dark:border-[#2F2F2F] dark:hover:bg-[var(--primary-green)] dark:hover:text-[text-[var(--dark-text-color)]];
+        font-family: var(--font-red-rose), serif;
+    }
+}
+
+.bookmark {
+    @apply flex items-center rounded-[5px] border border-[#EEEEEE] bg-white px-[6px] py-[5px] text-center transition-all duration-700 hover:bg-[var(--primary-green)] dark:bg-transparent dark:fill-white dark:border-[1px] dark:border-[#2F2F2F] dark:hover:bg-[var(--primary-green)] dark:hover:fill-[text-[var(--dark-text-color)]];
+}
+
+.email__subscribe {
+    @apply mt-[30px];
+}
+

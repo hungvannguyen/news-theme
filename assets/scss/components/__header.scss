@@ -186,9 +186,7 @@
 
 .sidebar {
   &__menu {
-    @apply fixed top-0 left-0 w-[280px] py-[30px] px-[20px] z-[99999] h-full overflow-auto bg-[var(--dark-white-color)] border-r-[1px] border-[var(--border-color)] transition-transform duration-300 ease-in shadow-[0px_2px_20px_rgba(0,0,0,0.03)]
-      //transform -translate-x-full
-    ;
+    @apply lg:hidden fixed top-0 left-0 w-[280px] py-[30px] px-[20px] z-[99999] h-full overflow-auto bg-[var(--dark-white-color)] border-r-[1px] border-[var(--border-color)] transition-transform duration-300 ease-in shadow-[0px_2px_20px_rgba(0,0,0,0.03)] transform;
 
     &::-webkit-scrollbar {
       width: 0px;
@@ -268,6 +266,10 @@
 
               a {
                 @apply size-[26px] flex items-center justify-center border-[1px] border-[var(--border-color)] rounded-[50%] transition-all duration-[350ms];
+
+                svg {
+                  @apply fill-[var(--text-color)] transition-all duration-[350ms] ease-linear;
+                }
               }
             }
           }
