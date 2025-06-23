@@ -100,6 +100,83 @@
                 closeSidebar();
             });
         }
+
+        const scrollProgressCircle = document.querySelector(
+            ".progress-circle-fill",
+        );
+        const radius = parseFloat(scrollProgressCircle.getAttribute("r"));
+        const circumference = 2 * Math.PI * radius;
+
+        // Đặt biến CSS tùy chỉnh cho chu vi
+        document.documentElement.style.setProperty(
+            "--circumference",
+            circumference,
+        );
+
+        // Cập nhật thuộc tính stroke-dashoffset ban đầu
+        scrollProgressCircle.style.strokeDasharray = circumference;
+        scrollProgressCircle.style.strokeDashoffset = circumference; // Ban đầu ẩn hoàn toàn
+
+        const scrollToTopBtn = document.querySelector(".scroll-to-top");
+
+        // Hàm cập nhật tiến độ
+        const updateScrollProgress = () => {
+            // Chiều cao tổng của nội dung trang
+            const documentHeight = document.documentElement.scrollHeight;
+            // Chiều cao của cửa sổ trình duyệt (viewport)
+            const viewportHeight = window.innerHeight;
+            // Vị trí cuộn hiện tại
+            const scrollTop = window.scrollY;
+
+            // Tính toán chiều cao khả dụng để cuộn (total scrollable height)
+            // Đây là tổng chiều cao của tài liệu trừ đi chiều cao của viewport
+            const scrollableHeight = documentHeight - viewportHeight;
+
+            // Đảm bảo không chia cho 0 nếu trang không cuộn được
+            if (scrollableHeight <= 0) {
+                scrollProgressCircle.style.strokeDashoffset = circumference; // Đặt về ban đầu nếu không cuộn
+                scrollToTopBtn.style.opacity = "0"; // Ẩn nút nếu không cuộn
+                return;
+            }
+
+            // Tính toán phần trăm đã cuộn
+            // Ví dụ: cuộn 50% trang thì scrollPercentage = 0.5
+            const scrollPercentage = Math.min(
+                1,
+                Math.max(0, scrollTop / scrollableHeight),
+            );
+
+            // Tính toán giá trị stroke-dashoffset
+            // Khi scrollPercentage = 0, dashoffset = circumference (không hiển thị)
+            // Khi scrollPercentage = 1, dashoffset = 0 (hiển thị đầy đủ)
+            const dashoffset = circumference * (1 - scrollPercentage);
+
+            scrollProgressCircle.style.strokeDashoffset = dashoffset;
+
+            // Hiển thị/ẩn nút scroll-to-top dựa trên vị trí cuộn
+            if (scrollTop > 100) {
+                // Hiển thị khi cuộn xuống 100px
+                scrollToTopBtn.style.opacity = "1";
+                scrollToTopBtn.style.pointerEvents = "auto"; // Cho phép click
+            } else {
+                scrollToTopBtn.style.opacity = "0";
+                scrollToTopBtn.style.pointerEvents = "none"; // Vô hiệu hóa click khi ẩn
+            }
+        };
+
+        // Gắn sự kiện cuộn (scroll) vào cửa sổ
+        window.addEventListener("scroll", updateScrollProgress);
+
+        // Xử lý sự kiện click để cuộn về đầu trang
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth", // Cuộn mượt mà
+            });
+        });
+
+        // Gọi hàm một lần khi tải trang để thiết lập trạng thái ban đầu
+        updateScrollProgress();
     });
 
     function setupDropdownBehavior() {

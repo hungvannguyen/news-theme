@@ -37,4 +37,30 @@
             }
         }
     }
+
+    &__horizontal {
+        @apply flex items-center gap-[24px];
+
+        .post__img {
+            img {
+                @apply rounded-[5px];
+            }
+        }
+
+        .content {
+            time {
+                @apply text-[var(--text-color2)] text-[14px] font-medium leading-none text-left;
+                font-family: var(--font-figtree), serif;
+            }
+
+            h3 {
+                @apply mt-[5px] mb-[8px];
+
+                a {
+                    @apply transition-all duration-[350px] max-w-[250px] block text-[var(--text-color)] text-left text-[18px] font-bold leading-normal tracking-[0em];
+                    font-family: var(--font-red-rose), serif;
+                }
+            }
+        }
+    }
 }

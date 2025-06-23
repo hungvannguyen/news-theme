@@ -236,6 +236,64 @@ p {
 }
 
 .email__subscribe {
-    @apply mt-[30px];
+    @apply mt-[30px] w-full;
+
+    h5 {
+        @apply text-[22px] font-bold leading-[2.2] text-left text-[var(--dark-text-color)] mb-[8px] dark:text-[var(--white-color)];
+        font-family: var(--font-red-rose), serif;
+    }
+
+    .input {
+        @apply w-full flex items-center justify-between p-[15px] max-w-[440px] h-[56px] rounded-[10px] border border-[#EEEEEE] bg-[var(--white-color)] dark:bg-[var(--dark-text-color)] dark:border-[#2F2F2F];
+
+        input {
+            @apply text-left tracking-[0em] leading-none font-normal text-[14px] bg-[var(--white-color)] w-full text-[#545454] placeholder:text-[#545454] dark:bg-[var(--dark-text-color)] dark:placeholder:text-[var(--white-color)];
+            font-family: var(--font-red-rose), serif;
+        }
+
+        button {
+            @apply w-full flex items-center justify-center transition-all duration-[350ms] bg-[var(--primary-green)] max-w-[36px] h-[36px] rounded-[50%];
+
+            svg {
+                @apply fill-[var(--dark-text-color)] transition-all duration-[350ms];
+            }
+        }
+
+        &:hover {
+
+            button {
+                @apply bg-[var(--text-color)];
+
+                svg {
+                    @apply fill-[var(--dark-white-color)];
+                }
+            }
+        }
+    }
+}
+
+.scroll-to-top {
+    @apply transform translate-y-[15px] bg-transparent fixed size-[40px] right-[30px] bottom-[55px] cursor-pointer rounded-[50%] z-[999] transition-all duration-200 ease-linear flex justify-center items-center;
+}
+
+.scroll-to-top .progress-circle {
+    @apply absolute w-full h-full;
+}
+
+.progress-circle-bg {
+    @apply fill-none;
+}
+
+.progress-circle-fill {
+    @apply fill-none stroke-[4px] stroke-[var(--primary-green)] rotate-[-90deg];
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.1s linear;
+    stroke-dasharray: var(--circumference);
+    stroke-dashoffset: var(--circumference);
+}
+
+.arrow-icon {
+    @apply text-[var(--primary-green)] size-[20px];
 }
 

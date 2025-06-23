@@ -1,13 +1,31 @@
 .footer {
-    @apply bg-[#F8F8F8] pb-[30px] pt-[80px];
+    @apply dark:bg-[#111111] bg-[#F8F8F8] pb-[30px] pt-[80px];
 
     &__top {
-        @apply mx-[-12px] mt-[-24px] grid grid-cols-3;
+        @apply mx-[-12px] mt-[-24px] grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3;
 
         &--left,
         &--right,
         &--center {
             @apply mt-[24px] px-[12px];
+        }
+
+        &--left {
+            @apply col-span-2 md:col-span-1 flex items-start justify-start;
+        }
+
+        &--center {
+            @apply flex justify-end lg:justify-center;
+        }
+
+        &--right {
+            @apply col-span-2 md:col-span-1;
+
+            ul {
+                li {
+                    @apply mb-[13px];
+                }
+            }
         }
     }
 
@@ -23,31 +41,87 @@
         }
 
         p {
-            @apply mb-[16px] mt-[18px] max-w-[480px] text-[16px] font-normal leading-[1.8] tracking-[0em] text-[var(--dark-text-color2)];
+            @apply mb-[16px] mt-[18px] max-w-[480px] text-[16px] font-normal leading-[1.8] tracking-[0em] text-[var(--dark-text-color2)] dark:text-[var(--white-color)];
         }
     }
 
     &__activetis {
-        @apply flex items-center;
+        @apply mt-[-24px] mx-[-12px] flex items-center flex-col lg:flex-row;
 
         &--item {
-            @apply mt-[24px] px-[12px];
+            @apply w-full mt-[24px] px-[12px];
 
             a {
                 @apply mt-[15px] flex gap-[8px];
 
                 .icon {
-                    @apply flex h-[26px] min-w-[26px] max-w-[26px] items-center justify-center rounded-[15px] border-[1px] border-[var(--dark-text-color)] bg-transparent text-center transition-all delay-0 duration-[350ms] ease-in-out hover:border-[var(--primary-green)] hover:bg-[var(--primary-green)];
+                    @apply flex h-[26px] min-w-[26px] max-w-[26px] items-center justify-center rounded-[15px] border-[1px] border-[var(--dark-text-color)] bg-transparent text-center transition-all delay-0 duration-[350ms] ease-in-out hover:border-[var(--primary-green)] hover:bg-[var(--primary-green)] dark:fill-[var(--white-color)] dark:border-[#2F2F2F] dark:hover:fill-[var(--dark-text-color)];
                 }
 
                 .number {
-                    @apply flex items-center text-left text-[16px] font-bold leading-none tracking-[0em] text-[var(--dark-text-color)];
+                    @apply flex items-center text-left text-[16px] font-bold leading-none tracking-[0em] text-[var(--dark-text-color)] dark:text-[var(--white-color)];
                     font-family: var(--font-red-rose), serif;
 
                     h5 {
-                        @apply mb-0 leading-none;
+                        @apply dark:text-[var(--white-color)] text-[20px] mb-0 leading-none;
                     }
                 }
+            }
+        }
+    }
+
+    &__widget {
+        &--title {
+            @apply mb-[30px];
+
+            h5 {
+                @apply text-[22px] font-bold leading-[1.2] text-left text-[var(--dark-text-color)] mb-0 dark:text-[var(--white-color)];
+                font-family: var(--font-red-rose), serif;
+            }
+        }
+
+        &--list {
+
+            li {
+                @apply mb-[20px];
+
+                a {
+                    @apply transition-all duration-500 gap-[10px] text-[var(--dark-text-color)] items-center flex text-left text-[16px] font-medium leading-[1.2] dark:text-[var(--white-color)];
+
+                    svg {
+                        @apply opacity-0 transition-all duration-500;
+                    }
+
+                    &:hover {
+
+                        svg {
+                            @apply opacity-100;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        @apply flex py-[25px] px-[15px] gap-[15px] lg:gap-0 flex-col lg:flex-row items-center justify-between rounded-[10px] border border-[#EEEEEE] mt-[40px] lg:mt-[70px] lg:py-[30px] lg:px-[40px] bg-[var(--white-color)] dark:border-[#2F2F2F] dark:bg-[var(--dark-text-color)];
+
+        .copyright {
+            p {
+                @apply text-[14px] font-normal leading-normal text-[var(--dark-text-color2)] mb-0 dark:text-[var(--white-color)];
+                font-family: var(--font-figtree), serif;
+
+                a {
+                    @apply text-[var(--dark-text-color)] font-medium text-left leading-[16.8px] tracking-[0em] transition-all duration-[350px] hover:text-[var(--primary-green)] dark:hover:text-[var(--primary-green)] dark:text-[var(--white-color)];
+                }
+            }
+        }
+
+        ul {
+            @apply flex justify-center gap-[13px] lg:gap-[45px];
+
+            a {
+                @apply text-[14px] font-normal text-center leading-none text-[#545454] flex items-center gap-[8px] transition-all duration-[350ms] dark:text-[var(--white-color)];
             }
         }
     }

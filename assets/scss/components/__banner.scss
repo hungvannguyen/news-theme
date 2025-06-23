@@ -42,6 +42,10 @@
     &__pagination {
         @apply pt-[50px];
 
+        .swiper-pagination-bullet {
+            @apply dark:bg-[#E6E6E6];
+        }
+
         .swiper-pagination-bullet-active {
             @apply bg-[var(--primary-green)];
         }
