@@ -1,0 +1,176 @@
+.post {
+    .post__category--left {
+        @apply mt-[24px] px-[12px];
+    }
+
+    &__thumbnail {
+        @apply mb-[30px];
+
+        &--image {
+            @apply mb-[8px];
+
+            img {
+                @apply h-full w-full shrink-0 object-cover;
+            }
+        }
+    }
+
+    &__meta {
+        @apply mb-[8px] flex items-center gap-[20px];
+
+        li {
+            a {
+                @apply text-[16px] font-normal leading-none text-[var(--text-color)] transition-all duration-[350ms];
+                font-family: var(--font-red-rose), serif;
+            }
+
+            time {
+                @apply relative text-[16px] font-normal leading-none text-[var(--text-color2)] transition-all duration-[350ms];
+                font-family: var(--font-figtree), serif;
+
+                &:after {
+                    @apply absolute left-[-12px] top-1/2 size-[6px] translate-y-[-50%] rounded-[50%] bg-[#C4C4C4] content-[''];
+                }
+            }
+        }
+    }
+
+    h1 {
+        @apply border-b border-[#EEEEEE] pb-[20px] text-left text-[45px] font-bold leading-[1.3] text-[var(--text-color)];
+        font-family: var(--font-red-rose), serif;
+    }
+
+    &__container {
+        @apply mx-[-12px] flex flex-wrap justify-center;
+
+        .wrapper {
+            @apply mx-auto mb-[60px] w-[83.33333333%] px-[12px];
+
+            &__1 {
+                @apply mx-auto mb-[40px] w-[83.33333333%] px-[12px];
+
+                .post__blog {
+                    @apply pt-0;
+                }
+            }
+        }
+    }
+
+    &__blog {
+        @apply pt-[55px];
+
+        .text {
+            @apply inline-block text-left text-[18px] font-medium text-[var(--text-color)] underline transition-all duration-[350ms];
+            font-family: var(--font-figtree), serif;
+        }
+
+        mark {
+            @apply mb-[10px] bg-[#FFF9D8] p-0 text-left text-[18px] font-normal leading-[0] text-[var(--text-color2)] transition-all duration-[350ms];
+            font-family: var(--font-figtree), serif;
+        }
+
+        span {
+            @apply mb-[45px] inline-block text-left text-[14px] font-medium leading-none text-[var(--text-color2)];
+            font-family: var(--font-figtree), serif;
+        }
+
+        p {
+            @apply mb-[13px] text-left text-[18px] font-normal leading-[1.7] text-[var(--text-color2)];
+            font-family: var(--font-figtree), serif;
+        }
+
+        h3 {
+            @apply pt-[24px] text-left text-[30px] font-bold leading-normal text-[var(--text-color)];
+            font-family: var(--font-red-rose), serif;
+        }
+
+        blockquote {
+            @apply relative mt-[64px] gap-[15px];
+
+            p {
+                @apply mt-[10px] pl-[30px] text-left text-[18px] font-medium italic leading-[1.7] text-[var(--text-color2)];
+                font-family: var(--font-figtree), serif;
+            }
+
+            &:before {
+                @apply absolute left-0 top-1/2 h-[184px] w-[1px] translate-y-[-50%] bg-[var(--primary-green)] content-[''];
+            }
+        }
+
+        ul {
+            @apply mb-[40px] pt-[12px];
+
+            li {
+                @apply flex items-center gap-[8px] text-left text-[18px] font-medium leading-[1.8] text-[var(--text-color2)];
+                font-family: var(--font-figtree), serif;
+            }
+        }
+    }
+
+    .author {
+        &__name {
+            @apply pl-[30px];
+
+            span {
+                @apply text-left text-[16px] font-bold leading-none text-[var(--text-color)];
+                font-family: var(--font-red-rose), serif;
+            }
+        }
+    }
+
+    &__tag {
+        @apply mx-auto mb-[34px] flex w-full items-center justify-between;
+
+        h6 {
+            @apply mb-0 text-left text-[16px] font-bold leading-none text-[var(--text-color2)];
+            font-family: var(--font-red-rose), serif;
+
+            a {
+                @apply text-[var(--text-color)] transition-all duration-[350ms] hover:text-[var(--primary-green)];
+            }
+        }
+
+        &--item {
+            @apply flex items-center gap-[10px];
+
+            h6 {
+                @apply mb-0 text-left text-[16px] font-semibold leading-none text-[var(--text-color)];
+                font-family: var(--font-figtree), serif;
+            }
+
+            ul {
+                @apply flex gap-[10px];
+
+                li {
+                    a {
+                        @apply text-left text-[14px] font-semibold leading-none text-[var(--text-color2)] transition-all duration-[350ms];
+                        font-family: var(--font-figtree), serif;
+                    }
+                }
+            }
+        }
+    }
+
+    &__share {
+        @apply mb-[60px] rounded-[10px] border border-[var(--white-color)] bg-[#F8F8F8];
+
+        &--content {
+            @apply pb-[50px] pt-[40px];
+
+            h3 {
+                @apply text-center text-[30px] font-bold leading-[1.3] text-[var(--dark-text-color)] mb-[8px];
+                font-family: var(--font-red-rose), sans-serif;
+            }
+
+            ul {
+                @apply mb-[30px] flex items-center justify-center gap-[14px];
+
+                li {
+                    a {
+                        @apply border-[#EEEEEE] flex size-[30px] items-center justify-center rounded-[50px] border bg-[var(--white-color)] text-center transition-all duration-[350ms];
+                    }
+                }
+            }
+        }
+    }
+}

@@ -42,8 +42,10 @@
         @apply flex items-center gap-[24px];
 
         .post__img {
+            @apply shrink-0;
+
             img {
-                @apply rounded-[5px];
+                @apply w-full h-full object-cover shrink-0 rounded-[5px];
             }
         }
 

@@ -95,6 +95,9 @@ p {
 }
 
 .container {
+
+    @apply max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] xxl:max-w-[1320px] mx-auto px-3 w-full;
+
     &--xl {
         @apply max-w-[1140px] xxl:max-w-[1320px] mx-auto px-3 w-full;
     }
@@ -295,5 +298,21 @@ p {
 
 .arrow-icon {
     @apply text-[var(--primary-green)] size-[20px];
+}
+
+.categories {
+    @apply mt-[35px] flex flex-wrap items-center gap-[15px];
+
+    li {
+        a {
+            @apply block rounded-[100px] border border-[#F8EEFC] bg-transparent px-[23px] py-[9px] text-center text-[16px] font-medium leading-[1.4] tracking-[0em] text-[var(--text-color2)] transition-all duration-700 hover:bg-[var(--text-color)] hover:text-[var(--white-color)] dark:border-[#2F2F2F] dark:text-[var(--white-color)];
+            font-family: var(--font-figtree), serif;
+        }
+    }
+}
+
+/* Trong file CSS của bạn, ví dụ: globals.css */
+.bg-description {
+    background-image: url(../assets/images/description-bg.png);
 }
 

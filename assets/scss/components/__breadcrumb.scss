@@ -1,0 +1,24 @@
+.breadcrumb {
+    @apply py-[15px];
+
+    ul {
+        @apply m-0 inline-flex flex-wrap items-center gap-[10px] p-0;
+
+        li {
+            @apply relative pl-[20px] text-[14px] font-medium capitalize leading-[16.8px] text-[var(--text-color2)] dark:text-[var(--text-color)];
+            font-family: var(--font-figtree), serif;
+
+            &:first-child {
+                @apply pl-0;
+            }
+
+            &:last-child {
+                @apply dark:text-[var(--text-color2)];
+            }
+
+            &:not(:first-child):after {
+                @apply absolute left-[2px] top-[50%] size-[6px] translate-y-[-50%] rounded-[50%] bg-[#C4C4C4] content-[''];
+            }
+        }
+    }
+}
