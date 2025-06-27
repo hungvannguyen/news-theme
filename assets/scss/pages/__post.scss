@@ -167,8 +167,108 @@
 
                 li {
                     a {
-                        @apply border-[#EEEEEE] flex size-[30px] items-center justify-center rounded-[50px] border bg-[var(--white-color)] text-center transition-all duration-[350ms];
+                        @apply border-[#EEEEEE] flex size-[30px] items-center justify-center rounded-[50px] border bg-[var(--white-color)] text-center transition-all duration-[350ms] hover:bg-[var(--primary-green)] hover:border-none;
                     }
+                }
+            }
+
+            .input {
+                @apply rounded-[28px] relative bg-[var(--white-color)] justify-between items-center mx-auto flex py-[10px] px-[30px] max-w-[440px] w-full border border-[#EEEEEE] h-[56px];
+
+                input {
+                    @apply text-left tracking-[0em] leading-[0] font-normal text-[14px] text-[rgb(84,84,84)] w-full bg-[var(--white-color)];
+                    font-family: var(--font-red-rose), sans-serif;
+                }
+
+                .icon {
+                    @apply w-full cursor-pointer transition-all duration-[350ms] justify-center items-center flex bg-[var(--dark-text-color)] rounded-[50%] max-w-[36px] h-[36px] hover:bg-[var(--primary-green)] hover:border-none;
+
+                    svg {
+                        @apply transition-all duration-[350ms] fill-[var(--white-color)];
+                    }
+
+                    &:hover {
+                        svg {
+                            @apply fill-[var(--text-color)];
+                        }
+                    }
+                }
+
+                .copy__text {
+
+                    @apply opacity-0 transition-all duration-[300ms] relative;
+
+                    &:after {
+                        @apply transition-all duration-[450ms] origin-right   opacity-100 translate-x-0 absolute top-[-13px] right-[40px] py-[5px] px-[10px] rounded-[3px] block content-["Copied"] leading-none bg-[var(--primary-green)] text-[var(--dark-text-color)] text-[16px];
+                        font-family: var(--font-red-rose), sans-serif;
+                    }
+
+                    &.visible {
+                        @apply opacity-100;
+                    }
+                }
+            }
+        }
+    }
+
+    &__subscribe {
+        @apply text-center py-[40px] rounded-[10px] bg-[#EDE6FF];
+
+        h3 {
+            @apply mb-[20px] mx-auto max-w-[400px] text-[#000000] text-center tracking-[0em] text-[30px] font-bold leading-[1.3];
+            font-family: var(--font-red-rose), sans-serif;
+        }
+
+        .input {
+            @apply mx-auto mb-[15px] justify-center flex items-center p-[15px] max-w-[440px] h-[56px] w-full bg-[var(--white-color)] border border-[var(--text-color)] rounded-[10px];
+
+            input {
+                @apply text-left tracking-[0em] leading-[0] font-normal text-[14px] text-[rgb(84,84,84)] w-full bg-[var(--white-color)];
+                font-family: var(--font-red-rose), sans-serif;
+            }
+
+            button {
+                @apply justify-center flex items-center bg-[var(--primary-green)] rounded-[50%] max-w-[36px] h-[36px] w-full transition-all duration-[350ms] hover:bg-[var(--text-color)] hover:border-none;
+
+                &:hover {
+                    svg {
+                        @apply fill-[var(--dark-white-color)];
+                    }
+                }
+            }
+        }
+
+        p {
+            @apply flex justify-center gap-[4px] items-center mb-0 text-center text-[var(--text-color2)] text-[14px] font-medium leading-[1.7] tracking-[0em];
+            font-family: var(--font-figtree), sans-serif;
+        }
+    }
+
+    &__related {
+        @apply pt-[90px];
+
+        h6 {
+            @apply mb-[26px] text-[var(--text-color)] text-left text-[30px] font-bold leading-normal;
+            font-family: var(--font-red-rose), sans-serif;
+        }
+    }
+
+    &__comments {
+        @apply pt-[100px] mx-[-12px];
+
+        &--wrapper {
+            @apply px-[12px];
+        }
+
+        .comment {
+            @apply border border-[#EEEEEE] rounded-[10px] pt-[44px] px-[50px] pb-[30px];
+
+            &--title {
+                @apply flex items-center gap-[14px] mb-[53px];
+
+                h4 {
+                    @apply text-[30px] text-[var(--dark-text-color)];
+                    font-family: var(--font-red-rose), sans-serif;
                 }
             }
         }
